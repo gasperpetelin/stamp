@@ -1,5 +1,15 @@
 # stamp
 
+## Data
+
+### Reproducibility (in progress)
+
+https://portal.ijs.si/nextcloud/s/Fi35sGdwk66fTR9
+
+### Existing
+
+https://portal.ijs.si/nextcloud/s/bYGaCcemSJa3mYk
+
 ## Running/Requirements
 
 1. Install [Miniconda](https://conda.io/en/latest/miniconda.html)
@@ -13,9 +23,7 @@ cd stamp
 make env
 conda activate ./env
 ```
-4. Running Snakemake (TODO) 
-   
-- Subset
+4. Running Snakemake
 ```bash
-snakemake -j --snakefile workflow/Snakefile
+snakemake -j --snakefile workflow/Snakefile --use-conda
 ```
