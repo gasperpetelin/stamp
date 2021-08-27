@@ -6,5 +6,6 @@ env:
 download_data:
 	wget -nv -O data.zip https://portal.ijs.si/nextcloud/s/bYGaCcemSJa3mYk/download
 	unzip -q data.zip
+	mr data.zip
 
 

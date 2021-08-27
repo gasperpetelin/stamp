@@ -1,0 +1,19 @@
+rule all:
+    input: "data/clusters"
+
+rule SOM_clustering:
+    input: "data/Features/all_data_ts_clean_v2.txt"
+    #output: "TODO"
+    conda:
+        "envs/SOM_clustering.yaml"
+    shell: "Rscript scr.R {input}"
+
+rule codebook_clustering:
+    input: "data/SOM/codes_48_48.txt"
+    output: directory("data/clusters")
+    shell: "python clustering_som.py --input {input} --output_dir {output}"
+
+rule coverage_matrix:
+    input: "TODO"
+    output: directory("TODO")
+    shell: "Rscript TODO"
