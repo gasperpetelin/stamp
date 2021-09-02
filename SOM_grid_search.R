@@ -5,7 +5,7 @@ set.seed(1465)
 args <- commandArgs(TRUE)
 
 print("Load data")
-data<-read.table("data/Features/all_data_ts_clean_v2.txt",sep="\t",header=TRUE)
+#data<-read.table("data/Features/all_data_ts_clean_v2.txt",sep="\t",header=TRUE)
 
 features_file<-args[2]
 data<-read.table(features_file, sep="\t",header=TRUE)
