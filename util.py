@@ -82,29 +82,29 @@ def compute_clusters(df, prefix=''):
     '''
   
     # Compute hierarhical custering with cos similarity for different sized clusters
-    length = np.sqrt((df**2).sum(axis=1))[:,None]
-    X = df / length
+    #length = np.sqrt((df**2).sum(axis=1))[:,None]
+    #X = df / length
     #clusterings[f'{prefix}_K_medians_cos'] = KMeans(n_clusters=10, random_state=0).fit(X).labels_
   
-    for i in range(3, 60):
-        algo_name = f'{prefix}_K_medians_cos_clusters_{i}'
-        res = KMeans(n_clusters=i, random_state=0).fit(X).labels_
-        clusterings[algo_name] = res
-        silhouette_scores[algo_name] = metrics.silhouette_score(df, res, metric='cosine')
+    #for i in range(3, 30):
+    #    algo_name = f'{prefix}_K_medians_cos_clusters_{i}'
+    #    res = KMeans(n_clusters=i, random_state=0).fit(X).labels_
+    #    clusterings[algo_name] = res
+    #    silhouette_scores[algo_name] = metrics.silhouette_score(df, res, metric='cosine')
   
   
     # Compute hierarhical custering with cos similarity for different sized clusters
-    for i in range(3, 60):
+    for i in range(3, 30):
         algo_name = f'{prefix}_AgglomerativeClustering_cos_clusters_{i}'
         res = AgglomerativeClustering(n_clusters=i, affinity='cosine', linkage='average').fit(df).labels_
         clusterings[algo_name] = res
-        silhouette_scores[algo_name] = metrics.silhouette_score(df, res, metric='cosine')
+        #silhouette_scores[algo_name] = metrics.silhouette_score(df, res, metric='cosine')
         
-        sample_silhouette_values = metrics.silhouette_samples(df, res, metric='cosine')
+        #sample_silhouette_values = metrics.silhouette_samples(df, res, metric='cosine')
 
-        means_lst = []
-        for label in range(i):
-            means_lst.append(sample_silhouette_values[res == label].mean())
-        per_cluester_silhouette_scores[algo_name] = means_lst
+        #means_lst = []
+        #for label in range(i):
+        #    means_lst.append(sample_silhouette_values[res == label].mean())
+        #per_cluester_silhouette_scores[algo_name] = means_lst
   
     return clusterings, clusterings_proba, silhouette_scores, per_cluester_silhouette_scores

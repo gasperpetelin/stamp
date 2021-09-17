@@ -1,4 +1,9 @@
 args <- commandArgs(TRUE)
+input_file<-args[1]
+output_file<-args[2]
+
+dim1<-args[3]
+dim2<-args[4]
 
 files<-list.files("ts_fresh_lvl1_full/Univariate2018_ts/Univariate_ts",full.names=TRUE,recursive=TRUE)
 
@@ -24,7 +29,7 @@ cell_inst<-read.table("cell_instance.txt",sep="\t")
 
 coverage_matrix <- function(file, output_file) {
     clusters<-read.csv(file,sep="\t",header=FALSE)
-    clusters<-cbind(clusters,seq(1,35*35,1))
+    clusters<-cbind(clusters,seq(1,dim1*dim2,1))
     colnames(clusters)<-c("groupes","cell")
     
     clust<-c()
@@ -78,7 +83,6 @@ coverage_matrix <- function(file, output_file) {
     write.table(coverage, output_file, sep="\t")
 }
 
-input_file<-args[1]
-output_file<-args[2]
+
 
 coverage_matrix(input_file, output_file)

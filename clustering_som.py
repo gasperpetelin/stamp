@@ -10,6 +10,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--input', type=str, required=True)
     parser.add_argument('--output_dir', type=str, required=True)
+    #parser.add_argument('--output', type=str, required=True)
     args = parser.parse_args()
 
     link = args.input
@@ -20,11 +21,18 @@ if __name__ == "__main__":
     #for typ, link in data_link.items():
 
     typ = Path(link).stem
-    df = pd.read_csv(link, sep="\t").to_numpy()
+
+    print(link)
+    df = pd.read_csv(link, sep=' ').to_numpy()
+
     clusteringsi, _, silhouette_scoresi, per_cluster_silhi = compute_clusters(df, prefix=typ)
     clusterings_all = {**clusterings_all, **clusteringsi}
     silhouette_scores_all = {**silhouette_scores_all, **silhouette_scoresi}
     per_cluester_silhouette_scores_all = {**per_cluester_silhouette_scores_all, **per_cluster_silhi}
+
+    #'_AgglomerativeClustering_cos_clusters_6'
+
+
 
     # Save them to csv files
     create_directory_if_not_exist(args.output_dir)
