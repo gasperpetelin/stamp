@@ -12,7 +12,7 @@ for (i in 1:nrow(data)){
 }
 
 
-#read the algorithms results for each dataset
+#read the algorithms results for each dfataset
 #set the path where the results are stores
 files<-list.files("../agregatedResults",recursive=TRUE,full.names=TRUE)
 
@@ -32,8 +32,6 @@ for(i in 1:length(files)){
 ds_remove<-c("Fungi","NonInvasiveFetalECGThorax1","HandOutlines","NonInvasiveFetalECGThorax2","FordB")
 
 #sampling approach
-
-
 sample_from_each_cluster<-function(sample_size,data,ds_remove){
 selected_ds<-c()
 ds_names<-colnames(data)
