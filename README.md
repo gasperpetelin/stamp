@@ -1,6 +1,6 @@
 # STAMP
 
-![STAMP](docs/pipeline.pdf)
+![STAMP](docs/pipeline.png)
 
 ## Data
 
