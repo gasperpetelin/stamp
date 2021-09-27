@@ -46,7 +46,7 @@ Results for individual steps of the analysis are available [here](https://portal
 
 - `build_descriptive_space.ipynb`
 
-    TODO
+    Creating the descriptive space for  training meta models.
 
 - `clustering_som_codebooks.py`
 
@@ -66,7 +66,7 @@ Results for individual steps of the analysis are available [here](https://portal
 
 - `instance_results_analysis.ipynb`
 
-    TODO
+    Analysis script.
 
 - `test_script.ipynb`
 
@@ -74,19 +74,11 @@ Results for individual steps of the analysis are available [here](https://portal
 
 - `time_series_classification_HIVE_COTE.py`
 
-    TODO
+    HIVE COTE model for time series classification.
 
 - `training_models.ipynb`
 
-    TODO
-
-- `training_models_run2.ipynb`
-
-    TODO
-
-- `training_models_run3.ipynb`
-
-    TODO
+    Bulding meta models on data from individual clusters on 1000/2000.
 
 - `util.py`
 
