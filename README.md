@@ -12,21 +12,18 @@ Results for individual steps of the analysis are available [here](https://portal
 
     Results of performing hierarchical clustering on 2304 (48x48) codebooks obtained with running SOM clustering. The output is a collection of 2304 instances clustered into 6 distinct clusters.
 
-- `Instance level all`
-
-    TODO
-
-- `Instance level selection`
-
-    TODO
-
 - `Bootstrapping statistical evaluation`
 
-    TODO
+    The folder consists of data used for statistical analysis performed by Friedman and further by the post-hoc Nemenyi test.
+    Example: ../48_48/90/3/. It means that for SOM grid 48x48 and 6 clusters, the threshold for selecting representatives is 90%, and for each cluster we selected 3 datasets as representatives. The provided data is the data involved in the bootstrapping approach analysed by the Friedman and the Nemenyi test. There are 4 thresholds available (i.e., 50%, 80%, 90%, and 100%) and for each one three sample sizes are investigated (i.e., 2, 3, and 4).
 
 - `SOM evaluation`
 
     A collection of different quality measures obtained during SOM clustering. Quality measures are reported SOM with different numbers of codebooks.
+    The folder consists of three files that are the results of the grid search of the SOMs.
+    top_error_all.txt - data where the first column is the size of the configuration and the second is the topographic error.
+    quant_error_all.txt - data where the first column is the size of the configuration and the second is the quantization error.
+    expl_var_all.txt - data where the first column is the size of the configuration and the second is the percentage of the explained variance.
 
 ---
 
